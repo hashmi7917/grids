@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  width: 90%;
+  padding: 20px;
+  height: 100vh;
+  margin: 0 auto;
+  border: 2px solid black;
+  display: grid;
+  gap: 20px;
+
+  /* grid-template-columns: 25% 25% 20% 20%; */
+  /* grid-template-rows: 45% 45%; */
+  grid-template-areas:
+    "one one two three"
+    "four five five three";
+}
+
+.one {
+  background-color: red;
+  grid-area: one;
+}
+.two {
+  background-color: blue;
+  grid-area: two;
+}
+.three {
+  background-color: purple;
+  grid-area: three;
+}
+.four {
+  background-color: green;
+  grid-area: four;
+}
+
+.five {
+  background-color: yellow;
+  grid-area: five;
+}
+
+@media (max-width: 500px) {
+  .grid {
+    display: block;
+  }
+}
